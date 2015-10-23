@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'securerandom'
+require 'pathname'
+require 'ruby-fcp/fcp_client'
+
+options = { index: 'index.html' }
+
+opts = OptionParser.new do |opts|
+  opts.banner = "Usage: #{$0} [options]"
+
+  opts.on("-u", "--uri URI",
+    "CHK@, USK@(requires insert uri),SSK@(requires inserturi)") do |u|
+    options[:uri] = u
+  end
+  opts.on("-p", "--path path",
+    "if this is directory make sure you specified -d option") do |p|
+    options[:path] = p
+  end
+
+  opts.on("-i", "--index defaultfile",
+    "default file for directory uploads, I believe it defaults to index.html") do |i|
+    options[:index] = i
+  end
+
+  opts.on("-s", "--server host:port",
+    "Must be a freenet client protocol server") do |s|
+    options[:server] = s
+  end
+
+  opts.on("-d", "--directory", "You are uploading a directory") do |d|
+    options[:directory] = d
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+        puts opts
+        exit
+  end
+
+end.parse!
+
+if options.has_key? :uri and options.has_key? :path
+
+  if options.has_key? :server
+    server = options[:server].chomp.lstrip.split(':')
+    client = FCPClient.new("fput-#{SecureRandom.hex}",server[0],server[1])
+  else
+    client = FCPClient.new("fput-#{SecureRandom.hex}")
+  end
+
+  if options[:directory]
+    client.simple_dir_put(options[:uri].chomp.lstrip,options[:path].chomp.chomp('/').lstrip,true,{"DefaultName" => options[:index]})
+  else
+    client.simple_put(options[:uri].chomp.lstrip,options[:path].chomp.lstrip)
+  end
+  client.close
+
+else
+ puts "-u and -p are mandatory type -h or --help for usage information"
+ exit
+end

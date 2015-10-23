@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'securerandom'
+require 'ruby-fcp'
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: fput.rb [options]"
+
+  opts.on("-u", "--uri URI",
+    "CHK@, USK@,SSK@") do |u|
+    options[:uri] = u
+  end
+
+  opts.on("-p", "--path path",
+    "if this is directory make sure you specified -d option") do |p|
+    options[:path] = p
+  end
+
+  opts.on("-s", "--server host:port",
+    "Must be a freenet client protocol server") do |s|
+    options[:server] = s
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+end.parse!
+
+if options.has_key? :uri and options.has_key? :path
+
+  if options.has_key? :server
+    server = options[:server].chomp.lstrip.split(':')
+    client = FCPClient.new("fput-#{SecureRandom.hex}",server[0],server[1])
+  else
+    client = FCPClient.new("fput-#{SecureRandom.hex}")
+  end
+
+  client.simple_get(options[:uri].chomp.lstrip,options[:path].chomp.chomp('/').lstrip)
+  client.close
+
+else
+ puts "-u and -p are mandatory type -h or --help for usage information"
+ exit
+end
