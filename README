@@ -1,4 +1,0 @@
-Should be ultra fresh cherry, has most functionality except for pluginmessages(wanted to do a seperate api for each
-type). Also runs keep alive function and is thread safe, auto reconnects you as well in case of socket failure,
-error/state
-checking should work properly now. Enjoy!
