@@ -14,7 +14,7 @@ From the command line:
 
     ruby -Ilib bin/fput -p <some file> -u 'CHK@'
 
-The command above will update <some file> to Freenet.
+The command above will upload "some file" file to Freenet.
 
 Building documentation
 ==
