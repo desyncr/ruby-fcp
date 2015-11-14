@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class FCPClient - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Communicator.html">Communicator</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-ddarun">#ddarun</a>
+    
+    <li ><a href="#method-i-direct_get">#direct_get</a>
+    
+    <li ><a href="#method-i-direct_put">#direct_put</a>
+    
+    <li ><a href="#method-i-get_plugin_info">#get_plugin_info</a>
+    
+    <li ><a href="#method-i-identifier">#identifier</a>
+    
+    <li ><a href="#method-i-killswitch">#killswitch</a>
+    
+    <li ><a href="#method-i-last_response">#last_response</a>
+    
+    <li ><a href="#method-i-list_persistent_requests">#list_persistent_requests</a>
+    
+    <li ><a href="#method-i-listpeers">#listpeers</a>
+    
+    <li ><a href="#method-i-modify_persistent_request">#modify_persistent_request</a>
+    
+    <li ><a href="#method-i-new_ssk_pair">#new_ssk_pair</a>
+    
+    <li ><a href="#method-i-peerinfo">#peerinfo</a>
+    
+    <li ><a href="#method-i-proberequest">#proberequest</a>
+    
+    <li ><a href="#method-i-put_complex_dir">#put_complex_dir</a>
+    
+    <li ><a href="#method-i-simple_dir_put">#simple_dir_put</a>
+    
+    <li ><a href="#method-i-simple_get">#simple_get</a>
+    
+    <li ><a href="#method-i-simple_put">#simple_put</a>
+    
+    <li ><a href="#method-i-subscribe_usk">#subscribe_usk</a>
+    
+    <li ><a href="#method-i-unsubscribe_usk">#unsubscribe_usk</a>
+    
+    <li ><a href="#method-i-usks_latest">#usks_latest</a>
+    
+    <li ><a href="#method-i-wait_for">#wait_for</a>
+    
+    <li ><a href="#method-i-wait_for_ever">#wait_for_ever</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-FCPClient">
+  <h1 id="class-FCPClient" class="class">
+    class FCPClient
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-ddarun" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ddarun</span><span
+            class="method-args">(directory,read, write)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>performs TestDDARequest and TestDDAResponse automagically read and write
+are true or false values</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ddarun-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ddarun</span>(<span class="ruby-identifier">directory</span>,<span class="ruby-identifier">read</span>, <span class="ruby-identifier">write</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Directory&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">directory</span>,<span class="ruby-string">&quot;WantReadDirectory&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">read</span>, <span class="ruby-string">&quot;WantWriteDirectory&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">write</span>} ,<span class="ruby-string">&quot;TestDDARequest&quot;</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">wait_for</span>(<span class="ruby-value">:dda</span>, <span class="ruby-regexp">/TestDDAReply/</span>).<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">content</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">write</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">res</span>[<span class="ruby-string">&quot;WriteFilename&quot;</span>],<span class="ruby-string">&#39;w+&#39;</span>)
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">res</span>[<span class="ruby-string">&quot;ContentToWrite&quot;</span>]
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">read</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">res</span>[<span class="ruby-string">&quot;ReadFilename&quot;</span>],<span class="ruby-string">&#39;r&#39;</span>).<span class="ruby-identifier">read</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Directory&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">directory</span>,<span class="ruby-string">&quot;ReadContent&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">content</span>}, <span class="ruby-string">&quot;TestDDAResponse&quot;</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">wait_for</span>(<span class="ruby-value">:dda</span> ,<span class="ruby-regexp">/TestDDAComplete/</span>).<span class="ruby-identifier">pop</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">res</span>[<span class="ruby-string">&quot;WriteFilename&quot;</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">write</span>
+  <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-direct_get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">direct_get</span><span
+            class="method-args">(uri ,wait = true, opts={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="direct_get-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">direct_get</span>(<span class="ruby-identifier">uri</span> ,<span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">opts</span>={})
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">options</span> = {<span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>, <span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-string">&quot;ReturnType&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;direct&#39;</span>, <span class="ruby-string">&quot;Global&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>(<span class="ruby-identifier">options</span>,<span class="ruby-string">&quot;ClientGet&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+   <span class="ruby-identifier">wait_for</span>(<span class="ruby-identifier">id</span>,<span class="ruby-regexp">/AllData|GetFailed/</span>)
+  <span class="ruby-keyword">else</span>
+   <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-direct_put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">direct_put</span><span
+            class="method-args">(uri,data, wait = true, opts = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Another interface to ClientPut that allows you to directly put data pnto
+freenet data is your data</p>
+
+<h2 id="method-i-direct_put-label-Possible+values+of+uri-3A">Possible values of uri:<span><a href="#method-i-direct_put-label-Possible+values+of+uri-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>CHK@ will generate and return the key your data is acessible at</p>
+</li><li>
+<p>SSK@ must have insert key provided by  GenerateSSK or the method <a
+href="FCPClient.html#method-i-new_ssk_pair">#new_ssk_pair</a></p>
+</li><li>
+<p>filename at KSK</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="direct_put-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">direct_put</span>(<span class="ruby-identifier">uri</span>,<span class="ruby-identifier">data</span>, <span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">options</span> = {<span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span> ,<span class="ruby-string">&quot;UploadFrom&quot;</span> =<span class="ruby-operator">&gt;</span>  <span class="ruby-string">&quot;direct&quot;</span>, <span class="ruby-string">&quot;DataLength&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">bytesize</span> }.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>(<span class="ruby-identifier">options</span>,<span class="ruby-string">&quot;ClientPut&quot;</span>).<span class="ruby-identifier">sub!</span> <span class="ruby-string">&quot;EndMessage\n&quot;</span>, <span class="ruby-node">&quot;Data\n#{data}&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+    <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>,<span class="ruby-regexp">/PutFailed|PutSuccessful/</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_plugin_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_plugin_info</span><span
+            class="method-args">(pluginname, detailed = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns information on plugin, must be full class name as listed in freenet
+interface Implements GetPluginInfo</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_plugin_info-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_plugin_info</span>(<span class="ruby-identifier">pluginname</span>, <span class="ruby-identifier">detailed</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;PluginName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pluginname</span>, <span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-string">&quot;Detailed&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">detailed</span> },<span class="ruby-string">&quot;GetPluginInfo&quot;</span>)
+  <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>, <span class="ruby-regexp">/PluginInfo/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-identifier" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">identifier</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Simple attribute reader for you ConnectionIdentifier</p>
+          
+          
+
+          
+          <div class="method-source-code" id="identifier-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">identifier</span>
+  <span class="ruby-ivar">@ConnectionIdentifier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-killswitch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">killswitch</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="killswitch-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">killswitch</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-string">&quot;Shutdown\nEndMessage\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-last_response" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last_response</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return last response from request defined by Identifier</p>
+          
+          
+
+          
+          <div class="method-source-code" id="last_response-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last_response</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-ivar">@responses</span>[<span class="ruby-identifier">id</span>].<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_persistent_requests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_persistent_requests</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List all persistent request just implements ListPersistentRequest</p>
+          
+          
+
+          
+          <div class="method-source-code" id="list_persistent_requests-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_persistent_requests</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-string">&quot;ListPersistentRequests\nEndMessage\n&quot;</span>
+  <span class="ruby-identifier">wait_for</span> <span class="ruby-value">:default</span> ,<span class="ruby-regexp">/EndListPersistentRequests/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-listpeers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listpeers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Straigt forward, ListPeers, sometimes it may choke up and give you end list
+peers before your peers, in that case check the id</p>
+          
+          
+
+          
+          <div class="method-source-code" id="listpeers-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listpeers</span>
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-string">&quot;WithMetaData&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-string">&quot;WithVolatile&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>},<span class="ruby-string">&quot;ListPeers&quot;</span>)
+  <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>, <span class="ruby-regexp">/EndListPeers/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-modify_persistent_request" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modify_persistent_request</span><span
+            class="method-args">(id,clienttoken,priorityclass)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modify_persistent_request-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modify_persistent_request</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">clienttoken</span>,<span class="ruby-identifier">priorityclass</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>,<span class="ruby-string">&quot;ClientToken&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">clienttoken</span>, <span class="ruby-string">&quot;PriorityClass&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">priorityclass</span>}, <span class="ruby-string">&quot;ModifyPersistentRequest&quot;</span>)
+  <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>, <span class="ruby-regexp">/PersistentRequestModified/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_ssk_pair" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_ssk_pair</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uses GenerateSSK</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new_ssk_pair-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_ssk_pair</span>
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>}, <span class="ruby-string">&quot;GenerateSSK&quot;</span>)
+  <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>, <span class="ruby-regexp">/SSKKeypair/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-peerinfo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peerinfo</span><span
+            class="method-args">(peer)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns information on a given peer not peers implements ListPeer</p>
+          
+          
+
+          
+          <div class="method-source-code" id="peerinfo-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">peerinfo</span>(<span class="ruby-identifier">peer</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;NodeIdentifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">peer</span>,<span class="ruby-string">&quot;WithVolatile&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>,<span class="ruby-string">&quot;WithMetadata&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-string">&quot;ListPeer&quot;</span>)
+  <span class="ruby-identifier">wait_for</span> <span class="ruby-value">:peer</span>, <span class="ruby-regexp">/Peer/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-proberequest" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">proberequest</span><span
+            class="method-args">(type,hopstolive=25,wait = true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="proberequest-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">proberequest</span>(<span class="ruby-identifier">type</span>,<span class="ruby-identifier">hopstolive</span>=<span class="ruby-value">25</span>,<span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>,<span class="ruby-string">&quot;Type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>,<span class="ruby-string">&quot;HopsToLive&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hopstolive</span>}, <span class="ruby-string">&quot;ProbeRequest&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+    <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>,<span class="ruby-regexp">/Probe/</span>
+  <span class="ruby-keyword">else</span>
+   <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-put_complex_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put_complex_dir</span><span
+            class="method-args">(uri, files, wait = true,opts = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>simpler staight forward interface to ClientPutComplexDir, you provide with</p>
+
+<h2 id="method-i-put_complex_dir-label-Possible+values+of+uri-3A">Possible values of uri:<span><a href="#method-i-put_complex_dir-label-Possible+values+of+uri-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>CHK@ will generate and return the key your data is acessible at</p>
+</li><li>
+<p>SSK@ must have insert key provided by  GenerateSSK or the method <a
+href="FCPClient.html#method-i-new_ssk_pair">#new_ssk_pair</a></p>
+</li><li>
+<p>filename at KSK</p>
+</li></ul>
+
+<p>As well as a list of hashes for files you want to put</p>
+
+<h2 id="method-i-put_complex_dir-label-File+hashlist+format-3A">File hashlist format:<span><a href="#method-i-put_complex_dir-label-File+hashlist+format-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>name: lib/hello or index.html, / will interperate as directory nesting</p>
+</li><li>
+<p>filename: in case of disk location of file on disk</p>
+</li><li>
+<p>uploadfrom: &#39;direct&#39;, &#39;disk&#39; or &#39;redirect&#39;</p>
+</li><li>
+<p>targeturi: in case of redirect, the location your are redirecting to</p>
+</li><li>
+<p>mimetype: not needed, but can be helpful</p>
+</li><li>
+<p>data: only nessecery in direct mode</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="put_complex_dir-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put_complex_dir</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">files</span>, <span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>,<span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-identifier">dirs</span> = []
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dirs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">f</span>[<span class="ruby-value">:filename</span>].<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-value">:filename</span> }
+  (<span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">uniq</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ddarun</span>(<span class="ruby-identifier">dir</span>,<span class="ruby-keyword">true</span>,<span class="ruby-keyword">false</span>) }
+  <span class="ruby-identifier">options</span> = {<span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>, <span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-node">&quot;Files.#{index}.Name&quot;</span>] = <span class="ruby-identifier">file</span>[<span class="ruby-value">:name</span>]
+    <span class="ruby-identifier">options</span>[<span class="ruby-node">&quot;Files.#{index}.UploadFrom&quot;</span>] = <span class="ruby-identifier">file</span>[<span class="ruby-value">:uploadfrom</span>]
+    <span class="ruby-identifier">options</span>[<span class="ruby-node">&quot;Files.#{index}.DataLength&quot;</span>] = <span class="ruby-identifier">file</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">bytesize</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-value">:data</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-node">&quot;Files.#{index}.Filename&quot;</span>] = <span class="ruby-identifier">file</span>[<span class="ruby-value">:filename</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>[<span class="ruby-value">:uploadfrom</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&#39;disk&#39;</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-node">&quot;Files.#{index}.TargetURI&quot;</span>] = <span class="ruby-identifier">file</span>[<span class="ruby-value">:targeturi</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>[<span class="ruby-value">:uploadfrom</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&#39;redirect&#39;</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-node">&quot;Files.#{index}.Metadata.ContentType&quot;</span>] = <span class="ruby-identifier">file</span>[<span class="ruby-value">:mimetype</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-value">:mimetype</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">message</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>(<span class="ruby-identifier">options</span>,<span class="ruby-string">&quot;ClientPutComplexDir&quot;</span>)
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">message</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">f</span>[<span class="ruby-value">:data</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-value">:data</span>}
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+   <span class="ruby-identifier">wait_for</span>(<span class="ruby-identifier">id</span>,<span class="ruby-regexp">/PutFailed|PutSuccessful/</span>)
+  <span class="ruby-keyword">else</span>
+   <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-simple_dir_put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">simple_dir_put</span><span
+            class="method-args">(uri, dir, wait = true, opts={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Simple directory upload, upload one directory all at once automates the
+TestDDA for you just provide uri and directory Implements ClientPutDiskDir</p>
+<ul><li>
+<p>CHK@ will generate and return the key your data is acessible at</p>
+</li><li>
+<p>SSK@ must have insert key provided by  GenerateSSK or the method <a
+href="FCPClient.html#method-i-new_ssk_pair">#new_ssk_pair</a></p>
+</li><li>
+<p>filename at KSK</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="simple_dir_put-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">simple_dir_put</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">dir</span>, <span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">opts</span>={})
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">ddarun</span>(<span class="ruby-identifier">dir</span>,<span class="ruby-keyword">true</span>,<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">options</span> = {<span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>,<span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>,<span class="ruby-string">&quot;Filename&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dir</span>, <span class="ruby-string">&quot;Global&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;true&#39;</span>, <span class="ruby-string">&quot;AllowUnreadableFiles&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;true&#39;</span>, <span class="ruby-string">&quot;IncludeHiddenValues&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;false&#39;</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>(<span class="ruby-identifier">options</span>,<span class="ruby-string">&quot;ClientPutDiskDir&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+    <span class="ruby-identifier">wait_for</span>(<span class="ruby-identifier">id</span>,<span class="ruby-regexp">/PutFailed|PutSuccessful/</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-simple_get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">simple_get</span><span
+            class="method-args">(uri,directory,wait = true, opts={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>just provide uri and download path/directory Implements ClientGet</p>
+          
+          
+
+          
+          <div class="method-source-code" id="simple_get-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">simple_get</span>(<span class="ruby-identifier">uri</span>,<span class="ruby-identifier">directory</span>,<span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">opts</span>={})
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">saveloc</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">directory</span>, <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;/&#39;</span>)[<span class="ruby-value">-1</span>]
+  <span class="ruby-identifier">ddarun</span>(<span class="ruby-identifier">directory</span>,<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">options</span> = {<span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>, <span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-string">&quot;ReturnType&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;disk&#39;</span>, <span class="ruby-string">&quot;Filename&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">saveloc</span>, <span class="ruby-string">&quot;TempFilename&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">saveloc</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.tmp&quot;</span> , <span class="ruby-string">&quot;Persistence&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;forever&#39;</span>, <span class="ruby-string">&quot;Global&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, <span class="ruby-string">&quot;Verbosity&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1111111</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>(<span class="ruby-identifier">options</span>,<span class="ruby-string">&quot;ClientGet&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+   <span class="ruby-identifier">wait_for</span>(<span class="ruby-identifier">id</span>,<span class="ruby-regexp">/GetFailed|DataFound/</span>)
+  <span class="ruby-keyword">else</span>
+   <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-simple_put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">simple_put</span><span
+            class="method-args">(uri, filename, wait = true, opts = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Simple interface to put a single file onto freenet from your disk uses
+ClientPut message</p>
+
+<h2 id="method-i-simple_put-label-Possible+values+of+uri-3A">Possible values of uri:<span><a href="#method-i-simple_put-label-Possible+values+of+uri-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>CHK@ will generate and return the key your data is acessible at</p>
+</li><li>
+<p>SSK@ must have insert key provided by GenerateSSK or the method <a
+href="FCPClient.html#method-i-new_ssk_pair">#new_ssk_pair</a></p>
+</li><li>
+<p>filename at KSK</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="simple_put-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">simple_put</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wait</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">options</span> = { <span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>, <span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-string">&quot;UploadFrom&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;disk&#39;</span>, <span class="ruby-string">&quot;Filename&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">filename</span>, <span class="ruby-string">&quot;FileHash&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">filehash_maker</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">filename</span>,<span class="ruby-identifier">identifier</span>), <span class="ruby-string">&quot;Verbosity&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;111111111&quot;</span> }.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;TargetFilename&quot;</span>] = <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)[<span class="ruby-value">-1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/CHK@/</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>(<span class="ruby-identifier">options</span>,<span class="ruby-string">&quot;ClientPut&quot;</span>)
+  <span class="ruby-comment">#@com.fcpackets.client_put uri, id, options</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">wait</span>
+    <span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>, <span class="ruby-regexp">/PutFailed|PutSuccessful/</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subscribe_usk" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subscribe_usk</span><span
+            class="method-args">(uri, wait = false ,opts ={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>subscirbe to a usk, have to poll it yourself by using <a
+href="id">responses</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="subscribe_usk-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subscribe_usk</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">wait</span> = <span class="ruby-keyword">false</span> ,<span class="ruby-identifier">opts</span> ={})
+  <span class="ruby-identifier">id</span> = <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">id_generate</span>
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;URI&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>, <span class="ruby-string">&quot;Identifier&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>} ,<span class="ruby-string">&quot;SubscribeUSK&quot;</span>)
+  <span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unsubscribe_usk" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsubscribe_usk</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unsubscribe_usk-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unsubscribe_usk</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">send_packet</span> <span class="ruby-node">&quot;UnsubscribeUSK\nIdentifier=#{id}\nEndMessage\n&quot;</span>
+  <span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-usks_latest" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">usks_latest</span><span
+            class="method-args">(uri)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="usks_latest-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">usks_latest</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">id</span> = <span class="ruby-identifier">subscribe_usk</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">response</span> = (<span class="ruby-identifier">wait_for</span> <span class="ruby-identifier">id</span>, <span class="ruby-regexp">/SubscribedUSKUpdate/</span>).<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">unsubscribe_usk</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">response</span>[<span class="ruby-string">&quot;Edition&quot;</span>].<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-wait_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wait_for</span><span
+            class="method-args">(id, pattern)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Waits for a specific pattern in a message identified by ID</p>
+          
+          
+
+          
+          <div class="method-source-code" id="wait_for-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wait_for</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">pattern</span>)
+  <span class="ruby-identifier">response</span> = [ ]
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">x</span> = <span class="ruby-ivar">@responses</span>[<span class="ruby-identifier">id</span>].<span class="ruby-identifier">pop</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:error</span>].<span class="ruby-identifier">pop</span>
+    <span class="ruby-keyword">rescue</span>
+    <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:head</span>] <span class="ruby-operator">=~</span> <span class="ruby-identifier">pattern</span>
+        <span class="ruby-identifier">response</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>
+        <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}=#{value}&quot;</span> }
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:head</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/ProtocolError/</span>
+        <span class="ruby-identifier">response</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>
+        <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}=#{value}&quot;</span> }
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">response</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>
+        <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}=#{value}&quot;</span> }
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-wait_for_ever" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wait_for_ever</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Just wait and wait given a id</p>
+          
+          
+
+          
+          <div class="method-source-code" id="wait_for_ever-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/fcp_client.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wait_for_ever</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">x</span> = <span class="ruby-ivar">@responses</span>[<span class="ruby-identifier">id</span>].<span class="ruby-identifier">pop</span>
+    <span class="ruby-keyword">rescue</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">&#39;.&#39;</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+      <span class="ruby-identifier">print</span> <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:error</span>]
+      <span class="ruby-identifier">print</span> <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:default</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}=#{value}&quot;</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">&#39;.&#39;</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+      <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:error</span>]
+      <span class="ruby-identifier">print</span> <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:default</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Communicator - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-close">#close</a>
+    
+    <li ><a href="#method-i-connect">#connect</a>
+    
+    <li ><a href="#method-i-grab_response">#grab_response</a>
+    
+    <li ><a href="#method-i-keep_alive">#keep_alive</a>
+    
+    <li ><a href="#method-i-send_packet">#send_packet</a>
+    
+    <li ><a href="#method-i-sock_thrd">#sock_thrd</a>
+    
+    <li ><a href="#method-i-sort_out">#sort_out</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Communicator">
+  <h1 id="class-Communicator" class="class">
+    class Communicator
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-ConnectionIdentifier" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ConnectionIdentifier</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-heartbeat" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">heartbeat</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-responses" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">responses</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-utils" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">utils</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(client, host='127.0.0.1', port=9481, version = 2.0)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>clients name must be unique This performs NodeHello operations upon
+initialization. <a href="Communicator.html">Communicator</a> handles packet
+sending and recieving and sorting</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">client</span>, <span class="ruby-identifier">host</span>=<span class="ruby-string">&#39;127.0.0.1&#39;</span>, <span class="ruby-identifier">port</span>=<span class="ruby-value">9481</span>, <span class="ruby-identifier">version</span> = <span class="ruby-value">2.0</span>)
+  <span class="ruby-ivar">@version</span> = <span class="ruby-identifier">version</span>
+  <span class="ruby-ivar">@ConnectionIdentifier</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">host</span>
+  <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>
+  <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
+  <span class="ruby-ivar">@responses</span> = { <span class="ruby-identifier">peers</span><span class="ruby-operator">:</span> [],<span class="ruby-identifier">dda</span><span class="ruby-operator">:</span> [], <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> [], <span class="ruby-identifier">error</span><span class="ruby-operator">:</span> [], <span class="ruby-identifier">datalengths</span><span class="ruby-operator">:</span> {} }
+  <span class="ruby-ivar">@tex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@state</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@queue</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@heartbeat</span> = <span class="ruby-value">300</span>
+  <span class="ruby-ivar">@utils</span> = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">connect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Send disconnect message and close the socket</p>
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+  <span class="ruby-ivar">@tex</span>.<span class="ruby-identifier">synchronize</span>{<span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">write</span> <span class="ruby-string">&quot;Disconnect EndMessage\n&quot;</span>}
+  <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-connect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">connect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="connect-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">connect</span>
+  <span class="ruby-ivar">@sock</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@host</span> ,<span class="ruby-ivar">@port</span>
+  <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">write</span> <span class="ruby-ivar">@utils</span>.<span class="ruby-identifier">packet_mangler</span>({<span class="ruby-string">&quot;Name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@client</span>,<span class="ruby-string">&quot;ExpectedVersion&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>},<span class="ruby-string">&quot;ClientHello&quot;</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">grab_response</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">response</span>[<span class="ruby-value">:state</span>] <span class="ruby-operator">==</span> <span class="ruby-value">-1</span>
+    <span class="ruby-ivar">@sock_thrd</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> {<span class="ruby-identifier">sock_thrd</span>}
+    <span class="ruby-ivar">@ConnectionIdentifier</span> = <span class="ruby-identifier">response</span>[<span class="ruby-string">&quot;ConnectionIdentifier&quot;</span>]
+    <span class="ruby-ivar">@state</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">keep_alive</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-grab_response" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">grab_response</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="grab_response-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grab_response</span>
+  <span class="ruby-identifier">response</span> = { <span class="ruby-identifier">state</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span> }
+  <span class="ruby-identifier">line</span> = <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">readline</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:state</span>] = <span class="ruby-value">-1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/ClosedConnectionDuplicateClientName|ProtocolError/</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:head</span>] = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp</span>
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/EndMessage|^Data$/</span>
+    <span class="ruby-identifier">response</span>[<span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;=&#39;</span>)[<span class="ruby-value">0</span>]] = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;=&#39;</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">chomp</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;=&#39;</span>).<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">line</span> = <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">readline</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:datalengths</span>][<span class="ruby-identifier">response</span>[<span class="ruby-string">&quot;Identifier&quot;</span>]] = <span class="ruby-identifier">response</span>[<span class="ruby-string">&quot;DataLength&quot;</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-string">&quot;DataLength&quot;</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:data</span>] = <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">read</span> <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:datalengths</span>][<span class="ruby-identifier">response</span>[<span class="ruby-string">&quot;Identifier&quot;</span>]] <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>[<span class="ruby-value">:head</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/AllData/</span>
+  <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-keep_alive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keep_alive</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="keep_alive-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">keep_alive</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+     <span class="ruby-identifier">send_packet</span> <span class="ruby-string">&quot;Void\nEndMessage\n&quot;</span>
+     <span class="ruby-identifier">sleep</span> <span class="ruby-ivar">@heartbeat</span>
+     <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@state</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-send_packet" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_packet</span><span
+            class="method-args">(message)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_packet-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_packet</span>(<span class="ruby-identifier">message</span>)
+  <span class="ruby-ivar">@queue</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sock_thrd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sock_thrd</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sock_thrd-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sock_thrd</span>
+  <span class="ruby-ivar">@threads</span> = []
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@threads</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">thrd</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-ivar">@threads</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">thrd</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">thrd</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value">0.5</span>)
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RequestFinished</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">req</span>
+        <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:error</span>].<span class="ruby-identifier">push</span> <span class="ruby-identifier">req</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">excpt</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{excpt}&quot;</span>
+        <span class="ruby-ivar">@threads</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">thrd</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">thrd</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@threads</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">thrd</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">thrd</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-ivar">@threads</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">thrd</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">close</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">exit</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@state</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">packet</span> = <span class="ruby-ivar">@queue</span>.<span class="ruby-identifier">pop</span>(<span class="ruby-keyword">true</span>)
+        <span class="ruby-ivar">@tex</span>.<span class="ruby-identifier">synchronize</span>{<span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">packet</span>}
+        <span class="ruby-comment">#sort_out(packet)</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ThreadError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">select</span>([<span class="ruby-ivar">@sock</span>], <span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">packet</span> = <span class="ruby-ivar">@tex</span>.<span class="ruby-identifier">synchronize</span>{<span class="ruby-identifier">grab_response</span>}
+        <span class="ruby-identifier">sort_out</span>(<span class="ruby-identifier">packet</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span>
+      <span class="ruby-ivar">@sock</span>.<span class="ruby-identifier">close</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">exit</span>
+      <span class="ruby-identifier">state</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">connect</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sort_out" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sort_out</span><span
+            class="method-args">(packet)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sort_out-source">
+            <pre><span class="ruby-comment"># File lib/ruby-fcp/communicator.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sort_out</span>(<span class="ruby-identifier">packet</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">packet</span>[<span class="ruby-value">:head</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;NodeHello&quot;</span>
+    <span class="ruby-ivar">@ConnectionIdentifier</span> = <span class="ruby-identifier">packet</span>[<span class="ruby-string">&quot;ConnectionIdentifier&quot;</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">packet</span>[<span class="ruby-value">:head</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;CloseConnectionDuplicateClientName&quot;</span>
+    <span class="ruby-ivar">@state</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">packet</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-string">&quot;Identifier&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@responses</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">packet</span>[<span class="ruby-string">&quot;Identifier&quot;</span>]
+      <span class="ruby-ivar">@responses</span>[<span class="ruby-identifier">packet</span>[<span class="ruby-string">&quot;Identifier&quot;</span>]].<span class="ruby-identifier">push</span> <span class="ruby-identifier">packet</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@responses</span>[<span class="ruby-identifier">packet</span>[<span class="ruby-string">&quot;Identifier&quot;</span>]] = [<span class="ruby-identifier">packet</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">packet</span>[<span class="ruby-value">:head</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;DDA&quot;</span>
+    <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:dda</span>].<span class="ruby-identifier">push</span> <span class="ruby-identifier">packet</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">packet</span>[<span class="ruby-value">:state</span>] <span class="ruby-operator">==</span> <span class="ruby-value">-1</span>
+    <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:error</span>].<span class="ruby-identifier">push</span> <span class="ruby-identifier">packet</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">packet</span>[<span class="ruby-value">:head</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;Peer&quot;</span>
+    <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:peers</span>].<span class="ruby-identifier">push</span> <span class="ruby-identifier">packet</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-identifier">packet</span>
+    <span class="ruby-ivar">@responses</span>[<span class="ruby-value">:default</span>].<span class="ruby-identifier">push</span> <span class="ruby-identifier">packet</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
